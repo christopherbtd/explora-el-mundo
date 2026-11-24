@@ -1,0 +1,482 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explora el Mundo</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'light-primary': '#0037B0',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#1D4ED8',
+        'light-on-primary-container': '#CAD3FF',
+        'light-secondary': '#4D5B94',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#B0BEFE',
+        'light-on-secondary-container': '#3D4C83',
+        'light-tertiary': '#7F2500',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#A73400',
+        'light-on-tertiary-container': '#FFC9B7',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#FAF8FF',
+        'light-on-background': '#1A1B23',
+        'light-surface': '#FAF8FF',
+        'light-surface-dim': '#D9D9E5',
+        'light-surface-bright': '#FAF8FF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F3F2FE',
+        'light-surface-container': '#EDEDF9',
+        'light-surface-container-high': '#E8E7F3',
+        'light-surface-container-highest': '#E2E1ED',
+        'light-on-surface': '#1A1B23',
+        'light-surface-variant': '#E0E1F4',
+        'light-on-surface-variant': '#434655',
+        'light-outline': '#747686',
+        'light-outline-variant': '#C4C5D7',
+        'light-inverse-surface': '#2E3039',
+        'light-inverse-on-surface': '#F0F0FB',
+        'light-inverse-primary': '#B7C4FF',
+        'light-shadow': '#000000',
+        'light-scrim': '#000000',
+        'dark-primary': '#B7C4FF',
+        'dark-on-primary': '#002682',
+        'dark-primary-container': '#1D4ED8',
+        'dark-on-primary-container': '#CAD3FF',
+        'dark-secondary': '#B7C4FF',
+        'dark-on-secondary': '#1D2C63',
+        'dark-secondary-container': '#35437B',
+        'dark-on-secondary-container': '#A4B2F1',
+        'dark-tertiary': '#FFB59C',
+        'dark-on-tertiary': '#5C1900',
+        'dark-tertiary-container': '#A73400',
+        'dark-on-tertiary-container': '#FFC9B7',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#11131B',
+        'dark-on-background': '#E2E1ED',
+        'dark-surface': '#11131B',
+        'dark-surface-dim': '#11131B',
+        'dark-surface-bright': '#373942',
+        'dark-surface-container-lowest': '#0C0E16',
+        'dark-surface-container-low': '#1A1B23',
+        'dark-surface-container': '#1E1F27',
+        'dark-surface-container-high': '#282932',
+        'dark-surface-container-highest': '#33343D',
+        'dark-on-surface': '#E2E1ED',
+        'dark-surface-variant': '#434655',
+        'dark-on-surface-variant': '#C4C5D7',
+        'dark-outline': '#8E90A0',
+        'dark-outline-variant': '#434655',
+        'dark-inverse-surface': '#E2E1ED',
+        'dark-inverse-on-surface': '#2E3039',
+        'dark-inverse-primary': '#2151DA',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Red Hat Text"', 'sans-serif'],
+        'headline': ['"Red Hat Text"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Spline Sans Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['44px', { lineHeight: '52px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '200ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Red+Hat+Text:wght@500;600;700&amp;family=Spline+Sans+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col bg-light-surface" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Encabezado -->
+    <header class="sticky top-0 z-10 bg-light-surface-container-lowest border-b border-light-outline-variant">
+      <div class="max-w-5xl mx-auto px-gutter-lg py-gutter-md flex items-center justify-between">
+        <div class="flex items-center gap-gutter-sm">
+          <span class="material-symbols-outlined text-light-primary text-headline-lg" aria-hidden="true">public</span>
+          <span data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface tracking-tight">Explora el Mundo</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-1 flex flex-col items-center justify-center px-gutter-lg py-section">
+      <div class="w-full max-w-2xl flex flex-col items-center gap-gutter-xl">
+
+        <!-- Título principal -->
+        <div class="text-center flex flex-col items-center gap-gutter-sm">
+          <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg-mobile md:text-display-lg text-light-on-surface text-balance">Descubre cualquier país</h1>
+        </div>
+
+        <!-- Barra de búsqueda -->
+        <form id="country-search-form" data-component-id="searchbar-standard" data-component-type="searchbar" data-component-variant="standard" role="search" class="flex w-full items-center gap-gutter-sm p-gutter-xs bg-light-surface-container-lowest border border-light-outline-variant rounded-md shadow-sm focus-within:border-light-primary focus-within:ring-2 focus-within:ring-light-primary/20 transition-colors duration-state-change ease-state-change">
+          <span class="material-symbols-outlined text-light-outline pl-gutter-md text-title-lg" aria-hidden="true">search</span>
+          <input id="country-input" type="search" aria-label="Nombre del país" placeholder="Escribe el nombre de un país (ej. España, México, Japón)..." autocomplete="off" class="flex-1 min-w-0 bg-transparent border-0 text-light-on-surface placeholder:text-light-outline font-body text-body-lg focus:ring-0 focus:outline-none py-2.5 px-gutter-sm">
+          <button type="submit" aria-label="Buscar" class="inline-flex items-center justify-center px-gutter-lg py-2.5 rounded-DEFAULT bg-light-primary text-light-on-primary font-label text-label-lg hover:bg-light-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary active:scale-95 transition-colors duration-state-change ease-state-change shrink-0">
+            <span data-design-text-token="label-lg">Buscar</span>
+          </button>
+        </form>
+
+        <!-- Tarjeta central de resultados -->
+        <article id="result-card" data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="w-full bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-xl shadow-sm" aria-live="polite">
+          <!-- Estado inicial (sin búsqueda) -->
+          <div id="empty-state" class="py-gutter-xl flex flex-col items-center text-center gap-gutter-md">
+            <div class="w-14 h-14 rounded-full bg-light-surface-container-low flex items-center justify-center text-light-primary">
+              <span class="material-symbols-outlined text-headline-lg" aria-hidden="true">travel_explore</span>
+            </div>
+            <div class="flex flex-col items-center gap-gutter-xs max-w-prose">
+              <h2 data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface text-balance">Busca un país para mostrar su información</h2>
+              <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">Escribe el nombre de cualquier país en el buscador y presiona Buscar para ver su bandera, capital, población, continente e idiomas.</p>
+            </div>
+          </div>
+
+          <!-- Estado sin resultados -->
+          <div id="not-found-state" class="hidden py-gutter-xl flex flex-col items-center text-center gap-gutter-md">
+            <div class="w-14 h-14 rounded-full bg-light-error-container flex items-center justify-center text-light-on-error-container">
+              <span class="material-symbols-outlined text-headline-lg" aria-hidden="true">search_off</span>
+            </div>
+            <div class="flex flex-col items-center gap-gutter-xs max-w-prose">
+              <h2 data-design-text-token="title-lg" class="font-headline text-title-lg text-light-on-surface text-balance">No encontramos ese país</h2>
+              <p id="not-found-message" data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">Verifica el nombre e inténtalo nuevamente (por ejemplo: España, México, Japón o Francia).</p>
+            </div>
+          </div>
+
+          <!-- Estado con resultado del país -->
+          <div id="country-result" class="hidden flex flex-col gap-gutter-lg">
+            <header class="flex flex-col sm:flex-row sm:items-center gap-gutter-lg pb-gutter-lg border-b border-light-outline-variant">
+              <div id="country-flag" class="w-28 h-20 rounded-md overflow-hidden border border-light-outline-variant bg-light-surface-container-low shrink-0 flex items-center justify-center" aria-label="Bandera del país"></div>
+              <div class="flex flex-col gap-gutter-xs min-w-0">
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-primary uppercase tracking-wider">País</span>
+                <h2 id="country-name" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface text-balance"></h2>
+              </div>
+            </header>
+
+            <dl class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-md">
+              <div class="p-gutter-md rounded-md bg-light-surface-container-low flex flex-col gap-gutter-xs">
+                <dt data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant uppercase tracking-wider">Capital</dt>
+                <dd id="country-capital" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface"></dd>
+              </div>
+
+              <div class="p-gutter-md rounded-md bg-light-surface-container-low flex flex-col gap-gutter-xs">
+                <dt data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant uppercase tracking-wider">Población</dt>
+                <dd id="country-population" data-design-text-token="mono-md" class="font-mono text-mono-md text-light-on-surface tabular-nums"></dd>
+              </div>
+
+              <div class="p-gutter-md rounded-md bg-light-surface-container-low flex flex-col gap-gutter-xs">
+                <dt data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant uppercase tracking-wider">Continente</dt>
+                <dd id="country-continent" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface"></dd>
+              </div>
+
+              <div class="p-gutter-md rounded-md bg-light-surface-container-low flex flex-col gap-gutter-xs">
+                <dt data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant uppercase tracking-wider">Idiomas</dt>
+                <dd id="country-languages" data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface"></dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      var COUNTRIES = [
+        {
+          names: ['espana', 'spain'],
+          name: 'España',
+          capital: 'Madrid',
+          population: '48.619.695',
+          continent: 'Europa',
+          languages: 'Español',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg>'
+        },
+        {
+          names: ['mexico'],
+          name: 'México',
+          capital: 'Ciudad de México',
+          population: '129.713.690',
+          continent: 'América',
+          languages: 'Español',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="1" height="2" fill="#006847"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#CE1126"/><circle cx="1.5" cy="1" r="0.22" fill="#8C6239"/></svg>'
+        },
+        {
+          names: ['japon', 'japan'],
+          name: 'Japón',
+          capital: 'Tokio',
+          population: '123.753.041',
+          continent: 'Asia',
+          languages: 'Japonés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#FFFFFF"/><circle cx="1.5" cy="1" r="0.6" fill="#BC002D"/></svg>'
+        },
+        {
+          names: ['colombia'],
+          name: 'Colombia',
+          capital: 'Bogotá',
+          population: '52.695.952',
+          continent: 'América',
+          languages: 'Español',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="1" fill="#FCD116"/><rect y="1" width="3" height="0.5" fill="#003893"/><rect y="1.5" width="3" height="0.5" fill="#CE1126"/></svg>'
+        },
+        {
+          names: ['argentina'],
+          name: 'Argentina',
+          capital: 'Buenos Aires',
+          population: '46.654.581',
+          continent: 'América',
+          languages: 'Español',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#74ACDF"/><rect y="0.66" width="3" height="0.68" fill="#FFFFFF"/><circle cx="1.5" cy="1" r="0.2" fill="#F6B40E"/></svg>'
+        },
+        {
+          names: ['francia', 'france'],
+          name: 'Francia',
+          capital: 'París',
+          population: '68.373.433',
+          continent: 'Europa',
+          languages: 'Francés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>'
+        },
+        {
+          names: ['alemania', 'germany'],
+          name: 'Alemania',
+          capital: 'Berlín',
+          population: '84.607.016',
+          continent: 'Europa',
+          languages: 'Alemán',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="0.67" fill="#000000"/><rect y="0.67" width="3" height="0.67" fill="#DD0000"/><rect y="1.34" width="3" height="0.66" fill="#FFCE00"/></svg>'
+        },
+        {
+          names: ['italia', 'italy'],
+          name: 'Italia',
+          capital: 'Roma',
+          population: '58.989.749',
+          continent: 'Europa',
+          languages: 'Italiano',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>'
+        },
+        {
+          names: ['brasil', 'brazil'],
+          name: 'Brasil',
+          capital: 'Brasilia',
+          population: '211.998.573',
+          continent: 'América',
+          languages: 'Portugués',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#009C3B"/><polygon points="1.5,0.25 2.65,1 1.5,1.75 0.35,1" fill="#FFDF00"/><circle cx="1.5" cy="1" r="0.4" fill="#002776"/></svg>'
+        },
+        {
+          names: ['chile'],
+          name: 'Chile',
+          capital: 'Santiago',
+          population: '19.658.835',
+          continent: 'América',
+          languages: 'Español',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="1" fill="#FFFFFF"/><rect y="1" width="3" height="1" fill="#D52B1E"/><rect width="1" height="1" fill="#0039A6"/><circle cx="0.5" cy="0.5" r="0.18" fill="#FFFFFF"/></svg>'
+        },
+        {
+          names: ['peru'],
+          name: 'Perú',
+          capital: 'Lima',
+          population: '34.217.848',
+          continent: 'América',
+          languages: 'Español, Quechua, Aimara',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="1" height="2" fill="#D91023"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#D91023"/></svg>'
+        },
+        {
+          names: ['estados unidos', 'eeuu', 'usa', 'united states'],
+          name: 'Estados Unidos',
+          capital: 'Washington D. C.',
+          population: '334.914.895',
+          continent: 'América',
+          languages: 'Inglés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#B22234"/><rect y="0.28" width="3" height="0.18" fill="#FFFFFF"/><rect y="0.64" width="3" height="0.18" fill="#FFFFFF"/><rect y="1.0" width="3" height="0.18" fill="#FFFFFF"/><rect y="1.36" width="3" height="0.18" fill="#FFFFFF"/><rect y="1.72" width="3" height="0.18" fill="#FFFFFF"/><rect width="1.25" height="1.08" fill="#3C3B6E"/></svg>'
+        },
+        {
+          names: ['canada'],
+          name: 'Canadá',
+          capital: 'Ottawa',
+          population: '40.097.761',
+          continent: 'América',
+          languages: 'Inglés, Francés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="0.75" height="2" fill="#FF0000"/><rect x="0.75" width="1.5" height="2" fill="#FFFFFF"/><rect x="2.25" width="0.75" height="2" fill="#FF0000"/><polygon points="1.5,0.45 1.65,0.9 2.0,0.9 1.72,1.15 1.82,1.55 1.5,1.32 1.18,1.55 1.28,1.15 1.0,0.9 1.35,0.9" fill="#FF0000"/></svg>'
+        },
+        {
+          names: ['portugal'],
+          name: 'Portugal',
+          capital: 'Lisboa',
+          population: '10.639.726',
+          continent: 'Europa',
+          languages: 'Portugués',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="1.2" height="2" fill="#006600"/><rect x="1.2" width="1.8" height="2" fill="#FF0000"/><circle cx="1.2" cy="1" r="0.32" fill="#FFCC00"/></svg>'
+        },
+        {
+          names: ['reino unido', 'inglaterra', 'uk', 'united kingdom'],
+          name: 'Reino Unido',
+          capital: 'Londres',
+          population: '68.350.000',
+          continent: 'Europa',
+          languages: 'Inglés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#012169"/><path d="M0,0 L3,2 M3,0 L0,2" stroke="#FFFFFF" stroke-width="0.35"/><path d="M0,0 L3,2 M3,0 L0,2" stroke="#C8102E" stroke-width="0.18"/><path d="M1.5,0 V2 M0,1 H3" stroke="#FFFFFF" stroke-width="0.5"/><path d="M1.5,0 V2 M0,1 H3" stroke="#C8102E" stroke-width="0.3"/></svg>'
+        },
+        {
+          names: ['corea del sur', 'south korea'],
+          name: 'Corea del Sur',
+          capital: 'Seúl',
+          population: '51.712.619',
+          continent: 'Asia',
+          languages: 'Coreano',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#FFFFFF"/><circle cx="1.5" cy="1" r="0.45" fill="#CD2E3A"/><path d="M1.05,1 A0.45,0.45 0 0,0 1.95,1 A0.225,0.225 0 0,1 1.5,1 A0.225,0.225 0 0,0 1.05,1 Z" fill="#0047A0"/></svg>'
+        },
+        {
+          names: ['australia'],
+          name: 'Australia',
+          capital: 'Canberra',
+          population: '26.638.544',
+          continent: 'Oceanía',
+          languages: 'Inglés',
+          flag: '<svg viewBox="0 0 3 2" class="w-full h-full object-cover"><rect width="3" height="2" fill="#00008B"/><rect width="1.3" height="0.9" fill="#012169"/><path d="M0.65,0 V0.9 M0,0.45 H1.3" stroke="#FFFFFF" stroke-width="0.22"/><path d="M0.65,0 V0.9 M0,0.45 H1.3" stroke="#C8102E" stroke-width="0.12"/><circle cx="2.2" cy="0.6" r="0.1" fill="#FFFFFF"/><circle cx="2.5" cy="1.1" r="0.1" fill="#FFFFFF"/><circle cx="2.1" cy="1.5" r="0.1" fill="#FFFFFF"/><circle cx="0.65" cy="1.45" r="0.14" fill="#FFFFFF"/></svg>'
+        }
+      ];
+
+      var form = document.getElementById('country-search-form');
+      var input = document.getElementById('country-input');
+      var emptyState = document.getElementById('empty-state');
+      var notFoundState = document.getElementById('not-found-state');
+      var countryResult = document.getElementById('country-result');
+      var flagEl = document.getElementById('country-flag');
+      var nameEl = document.getElementById('country-name');
+      var capitalEl = document.getElementById('country-capital');
+      var populationEl = document.getElementById('country-population');
+      var continentEl = document.getElementById('country-continent');
+      var languagesEl = document.getElementById('country-languages');
+
+      function normalizeText(str) {
+        return str
+          .trim()
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function showEmpty() {
+        emptyState.classList.remove('hidden');
+        notFoundState.classList.add('hidden');
+        countryResult.classList.add('hidden');
+      }
+
+      function showCountry(country) {
+        emptyState.classList.add('hidden');
+        notFoundState.classList.add('hidden');
+        countryResult.classList.remove('hidden');
+        flagEl.innerHTML = country.flag;
+        flagEl.setAttribute('aria-label', 'Bandera de ' + country.name);
+        nameEl.textContent = country.name;
+        capitalEl.textContent = country.capital;
+        populationEl.textContent = country.population;
+        continentEl.textContent = country.continent;
+        languagesEl.textContent = country.languages;
+      }
+
+      function showNotFound() {
+        emptyState.classList.add('hidden');
+        countryResult.classList.add('hidden');
+        notFoundState.classList.remove('hidden');
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var query = normalizeText(input.value || '');
+        if (!query) {
+          showEmpty();
+          return;
+        }
+        var match = COUNTRIES.find(function (c) {
+          return c.names.some(function (n) {
+            return n === query || n.indexOf(query) !== -1;
+          });
+        });
+        if (match) {
+          showCountry(match);
+        } else {
+          showNotFound();
+        }
+      });
+
+      input.addEventListener('input', function () {
+        if (!input.value.trim()) {
+          showEmpty();
+        }
+      });
+    })();
+  </script>
+
+
+</body></html>
